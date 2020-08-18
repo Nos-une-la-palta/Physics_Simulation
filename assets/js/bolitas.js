@@ -75,7 +75,6 @@ function choque(P1, P2) {
 /*-------------------------------------------------------------------------------*/
 
 function inicializar(){ 
-    ED = [];
     MC = [];
     ctx.lineWidth = strk;  
     for (var i = 0; i < NB; i++) {
@@ -199,10 +198,12 @@ function Bolita(x,y,r,vx,vy,m){
 function animar(){
     requestAnimationFrame(animar);
     ctx.clearRect(0,0,canvas.width,canvas.height);
-    borde();
+    if (MC.Length = NB){
+        borde();
     for (var i = 0; i < MC.length; i++) {
         MC[i].update(MC);
         }
+    }else {inicializar()}
 }
 inicializar();
 animar();
