@@ -20,10 +20,24 @@ function bolitas_range(data){
     console.log("Numero bolitas", NB, MC.length)
     return NB = Number(data);
 }
+// -----------------  Número bolitas END(menor a 400 o explota) -------------------
 // ancho de línea de dibujo (relevante para las coordenadas y la impresión de superposición)
 var strk = 2;
 // prototipo hacia la energía cinética. factor de amplificación de velocidad media de partículas.
-var boost = 25; // OK
+// -----------------  BOOOOST   -------------------
+var getBoostRangeId = document.getElementById("boost_range");
+var ch_boost = false;
+var bst = Number(getBoostRangeId.value);
+document.getElementById("boost").innerText = bst
+
+function boost_range(data){
+    document.getElementById("boost").innerText = data;
+    console.log("boost", bst)
+    ch_boost = false;
+    return bst = Number(data);
+}
+
+// -----------------  BOOOOST  END -------------------
 //canvas
 ctx = canvas.getContext("2d");
 // Arreglo de bolitas
@@ -87,8 +101,8 @@ function inicializar(){
     MC = [];
     ctx.lineWidth = strk;  
     for (var i = 0; i < NB; i++) {
-        let vx = (Math.random() - 0.5) * boost; 
-        let vy = (Math.random() - 0.5) * boost;
+        let vx = (Math.random() - 0.5) * bst; 
+        let vy = (Math.random() - 0.5) * bst;
         let x = Math.random() * (canvas.width - 2 * (r + strk)) + r + strk;
         let y = Math.random() * (canvas.height - 2 * (r + strk)) + r + strk;
         if (i != 0){
@@ -104,6 +118,7 @@ function inicializar(){
         } 
         MC.push(new Bolita(x,y,r,vx,vy,m));
     }
+    ch_boost = true;
     borde();
     
 }
@@ -207,13 +222,13 @@ function Bolita(x,y,r,vx,vy,m){
 function animar(){
     requestAnimationFrame(animar);
     ctx.clearRect(0,0,canvas.width,canvas.height);
-    if (MC.length === NB){
+    if ((MC.length === NB) && (ch_boost == true)){
         borde();
         for (var i = 0; i < MC.length; i++) {
             MC[i].update(MC);
         }
     } else {
-        console.log("paso","Numero bolitas", NB, MC.length);
+        console.log("paso","Numero bolitas", NB, MC.length, ch_boost);
         inicializar()
     }
 }
