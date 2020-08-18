@@ -9,7 +9,7 @@ var m = 1;
 // apertura pared
 var ap = (canvas.height/2) - 100;
 // ancho pared
-var ancho =100; 
+var ancho =10; 
 // número bolitas (menor a 400 o explota)
 var getBolitasRangeId = document.getElementById("bolitas_range")
 var NB = Number(getBolitasRangeId.value); //OK
@@ -17,7 +17,7 @@ document.getElementById("n_bolitas").innerText = NB
 
 function bolitas_range(data){
     document.getElementById("n_bolitas").innerText = data
-    console.log("Numero bolitas", NB)
+    console.log("Numero bolitas", NB, MC.length)
     return NB = Number(data);
 }
 // ancho de línea de dibujo (relevante para las coordenadas y la impresión de superposición)
@@ -207,12 +207,15 @@ function Bolita(x,y,r,vx,vy,m){
 function animar(){
     requestAnimationFrame(animar);
     ctx.clearRect(0,0,canvas.width,canvas.height);
-    if (MC.Length = NB){
+    if (MC.length === NB){
         borde();
-    for (var i = 0; i < MC.length; i++) {
-        MC[i].update(MC);
+        for (var i = 0; i < MC.length; i++) {
+            MC[i].update(MC);
         }
-    }else {inicializar()}
+    } else {
+        console.log("paso","Numero bolitas", NB, MC.length);
+        inicializar()
+    }
 }
 inicializar();
 animar();
