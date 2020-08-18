@@ -11,11 +11,20 @@ var ap = (canvas.height/2) - 100;
 // ancho pared
 var ancho =100; 
 // número bolitas (menor a 400 o explota)
-var NB = 100;
+var getBolitasRangeId = document.getElementById("bolitas_range")
+var NB = Number(getBolitasRangeId.value); //OK
+document.getElementById("n_bolitas").innerText = NB
+
+function bolitas_range(data){
+    document.getElementById("n_bolitas").innerText = data
+    console.log("Numero bolitas", NB)
+    return NB = Number(data);
+}
 // ancho de línea de dibujo (relevante para las coordenadas y la impresión de superposición)
 var strk = 2;
 // prototipo hacia la energía cinética. factor de amplificación de velocidad media de partículas.
-var boost = 25;
+var boost = 25; // OK
+//canvas
 ctx = canvas.getContext("2d");
 // Arreglo de bolitas
 let MC;
