@@ -1,3 +1,4 @@
+console.log('SOY EL SCRIPT.JS')
 var contenedor = document.querySelector("#contenedor");
 var ampliarLienzo = document.querySelector("#lienzo");
 var btnAmpliar = document.querySelector("#btnAmpliar")
