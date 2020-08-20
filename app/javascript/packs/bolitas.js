@@ -1,4 +1,3 @@
-console.log('SOY EL BOLITAS.JS')
 /*-------------------------------------------------------------------------------*/
 /*--------------------------------Variables--------------------------------------*/
 /*-------------------------------------------------------------------------------*/
@@ -9,18 +8,23 @@ var r = 12;
 var m = 1;
 // apertura pared
 var ap = (canvas.height/2) - 100;
+console.log(ap)
 // ancho pared
 var ancho =100; 
 // -----------------  Número bolitas (menor a 400 o explota) -------------------
 var getBolitasRangeId = document.getElementById("bolitas_range");
 var NB = Number(getBolitasRangeId.value); 
+
 document.getElementById("n_bolitas").innerText = NB
 
-function bolitas_range(data){
-    document.getElementById("n_bolitas").innerText = data;
+getBolitasRangeId.addEventListener('change', bolitas_range)
+
+function bolitas_range(e){
+    document.getElementById("n_bolitas").innerText = e.target.value;
+    NB = Number(e.target.value);
     console.log("Numero bolitas", NB)
-    return NB = Number(data);
 }
+
 // -----------------  Número bolitas END(menor a 400 o explota) -------------------
 // ancho de línea de dibujo (relevante para las coordenadas y la impresión de superposición)
 var strk = 2;
@@ -95,6 +99,7 @@ function choque(P1, P2) {
 }
 
 /*-------------------------------------------------------------------------------*/
+window.addEventListener('change', inicializar); // MAGIA!!!!!!!!!!
 
 function inicializar(){ 
     ED = [];
