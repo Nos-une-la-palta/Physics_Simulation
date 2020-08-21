@@ -10,18 +10,6 @@ var m = 1;
 var ap = (canvas.height/2) - 100;
 console.log(ap)
 // ancho pared
-<<<<<<< HEAD:assets/js/bolitas.js
-var ancho =10; 
-// número bolitas (menor a 400 o explota)
-var getBolitasRangeId = document.getElementById("bolitas_range")
-var NB = Number(getBolitasRangeId.value); //OK
-document.getElementById("n_bolitas").innerText = NB
-
-function bolitas_range(data){
-    document.getElementById("n_bolitas").innerText = data
-    console.log("Numero bolitas", NB, MC.length)
-    return NB = Number(data);
-=======
 var ancho =100; 
 // -----------------  Número bolitas (menor a 400 o explota) -------------------
 var getBolitasRangeId = document.getElementById("bolitas_range");
@@ -35,7 +23,6 @@ function bolitas_range(e){
     document.getElementById("n_bolitas").innerText = e.target.value;
     NB = Number(e.target.value);
     console.log("Numero bolitas", NB)
->>>>>>> development:app/javascript/packs/bolitas.js
 }
 
 // -----------------  Número bolitas END(menor a 400 o explota) -------------------
@@ -44,17 +31,6 @@ var strk = 2;
 // prototipo hacia la energía cinética. factor de amplificación de velocidad media de partículas.
 // -----------------  BOOOOST   -------------------
 var getBoostRangeId = document.getElementById("boost_range");
-<<<<<<< HEAD:assets/js/bolitas.js
-var ch_boost = false;
-var bst = Number(getBoostRangeId.value);
-document.getElementById("boost").innerText = bst
-
-function boost_range(data){
-    document.getElementById("boost").innerText = data;
-    console.log("boost", bst)
-    ch_boost = false;
-    return bst = Number(data);
-=======
 var boost = Number(getBoostRangeId.value);
 
 document.getElementById("boost").innerText = boost
@@ -65,7 +41,6 @@ function boost_range(e){
     document.getElementById("boost").innerText = e.target.value;
     boost = Number(e.target.value);
     console.log("boost", boost)
->>>>>>> development:app/javascript/packs/bolitas.js
 }
 
 // -----------------  BOOOOST  END -------------------
