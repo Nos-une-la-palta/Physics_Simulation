@@ -10,7 +10,7 @@ var m = 1;
 var ap = (canvas.height/2) - 100;
 console.log(ap)
 // ancho pared
-var ancho =100; 
+var ancho =10; 
 // -----------------  Número bolitas (menor a 400 o explota) -------------------
 var getBolitasRangeId = document.getElementById("bolitas_range");
 var NB = Number(getBolitasRangeId.value); 
@@ -30,6 +30,7 @@ function bolitas_range(e){
 var strk = 2;
 // prototipo hacia la energía cinética. factor de amplificación de velocidad media de partículas.
 // -----------------  BOOOOST   -------------------
+var ch_boost = false;
 var getBoostRangeId = document.getElementById("boost_range");
 var boost = Number(getBoostRangeId.value);
 
@@ -39,6 +40,7 @@ getBoostRangeId.addEventListener('change', boost_range)
 
 function boost_range(e){
     document.getElementById("boost").innerText = e.target.value;
+    ch_boost = true;
     boost = Number(e.target.value);
     console.log("boost", boost)
 }
@@ -108,8 +110,8 @@ function inicializar(){
     MC = [];
     ctx.lineWidth = strk;  
     for (var i = 0; i < NB; i++) {
-        let vx = (Math.random() - 0.5) * bst; 
-        let vy = (Math.random() - 0.5) * bst;
+        let vx = (Math.random() - 0.5) * boost; 
+        let vy = (Math.random() - 0.5) * boost;
         let x = Math.random() * (canvas.width - 2 * (r + strk)) + r + strk;
         let y = Math.random() * (canvas.height - 2 * (r + strk)) + r + strk;
         if (i != 0){
