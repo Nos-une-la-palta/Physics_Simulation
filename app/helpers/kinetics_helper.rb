@@ -1,0 +1,2 @@
+module KineticsHelper
+end

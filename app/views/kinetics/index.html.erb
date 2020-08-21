@@ -1,0 +1,37 @@
+<div class="container-fluid">     
+    <div class="row mt-5">
+        <div class="col-6 offset-1">
+            <div id="vertical"></div>
+            <div id="contenedor">
+                <canvas id="lienzo" width="1000px" height="500px"></canvas>
+            </div> 
+        </div>
+        <div class="col-3 offset-1 mt-5">
+            <div class="row mt-5">
+                <!--  ICONO SVG PARA EL NUMERO DE BOLITAS DE BOOTSTRAP 5 -->
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-down-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 5a.5.5 0 0 0-1 0v4.793L5.354 7.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 9.793V5z"/>
+                </svg>
+                NºBolitas:<span id="n_bolitas"></span>
+                <input 
+                    type="range"
+                    class="form-range" id="bolitas_range"
+                    min="0" max="200" step="1" value="2"
+                >
+            <div class="row mt-5">
+                <!--  ICONO SVG PARA EL BOOST DE BOOTSTRAP 5 -->
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-down-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 5a.5.5 0 0 0-1 0v4.793L5.354 7.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 9.793V5z"/>
+                </svg>
+                BOOST MOTHERFUCKER:<span id="boost"></span>
+                <input
+                    type="range"
+                    class="form-range" id="boost_range"
+                    min="0" max="100" step="1" value="25"
+                >
+            </div>
+        </div>
+    </div>
+</div>
+
+<%= javascript_pack_tag 'bolitas.js' %>
