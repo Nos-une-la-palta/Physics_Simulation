@@ -32,12 +32,15 @@ var strk = 2;
 // -----------------  BOOOOST   -------------------
 var getBoostRangeId = document.getElementById("boost_range");
 var boost = Number(getBoostRangeId.value);
-document.getElementById("boost").innerText = NB
 
-function boost_range(data){
-    document.getElementById("boost").innerText = data;
+document.getElementById("boost").innerText = boost
+
+getBoostRangeId.addEventListener('change', boost_range)
+
+function boost_range(e){
+    document.getElementById("boost").innerText = e.target.value;
+    boost = Number(e.target.value);
     console.log("boost", boost)
-    return boost = Number(data);
 }
 
 // -----------------  BOOOOST  END -------------------
