@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body{
+    overflow: hidden;
+}
+
+#contenedor{
+    position: relative;
+    margin: 5vh auto;
+    width: 1000px;
+    height: 500px;
+}
+
+#lienzo{
+    background: url('grid.svg');
+}
+
+#contenedor button{
+    display: block;
+    position: relative;
+    margin: 5px 0;
+    padding: 10px;
+    cursor: pointer;
+}
+
+@media all and (orientation: portrait){
+
+    #contenedor{
+        display: none;
+    }
+
+   
+    #vertical{
+        display: block;
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        z-index: 1;
+        background: url(1.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+}
