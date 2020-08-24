@@ -17,7 +17,7 @@ body{
 }
 
 #lienzo{
-    background: url('grid.svg');
+    background-image: url(https://svgshare.com/i/Nwc.svg);
 }
 
 #contenedor button{
